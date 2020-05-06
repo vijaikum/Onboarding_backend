@@ -22,7 +22,7 @@ app.use('/customers', customerRoute);
 
 
 app.get('/', (req, res) => {
-    res.send("Please provide corret resource url");
+    res.send("Please provide correcct resource url to access the onboarding service e.g /customers");
 });
 
 mongoose.connect(process.env.DB_CONNECTION,
