@@ -20,8 +20,7 @@ userRouter.post('/auth', async (req, res)=>{
             }
         );
         if(user.length > 0){
-            //res.json(user)
-            res.json({"authenticated": "true", "roles" : user.roles})
+            res.json({"authenticated": "true", "roles" : user[0].roles});
         }else
         {
             res.json({"authenticated": "false"})
