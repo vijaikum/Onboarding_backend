@@ -18,7 +18,7 @@ app.use('/user', userRoute);
 
 const customerRoute = require('./routes/customer');
 
-app.use('/customer', customerRoute);
+app.use('/customers', customerRoute);
 
 
 app.get('/', (req, res) => {
@@ -30,4 +30,6 @@ mongoose.connect(process.env.DB_CONNECTION,
     console.log("DB Connected")    
 })
 
-app.listen(3000);
+const port=process.env.PORT || 3000
+
+app.listen(port);
