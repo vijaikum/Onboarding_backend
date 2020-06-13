@@ -4,10 +4,26 @@ const Customer = require('../model/Customer')
 
 customerRouter.get('/', async (req, res) => {
     try{
-        const customers = await Customer.find();
-        res.json(customers);
+        var response = [];
+
+        var query = { $and: [] };
+        if(typeof req.query.custName != 'undefined')
+            { query.$and.push({custName: req.query.custName}); }
+        if(typeof req.query.businessType != 'undefined')
+            { query.$and.push({businessType: req.query.businessType}); }
+        if(typeof req.query.Status != 'undefined')
+            { query.$and.push({Status: req.query.Status}); }
+        
+        var isEmpty = Object.keys(req.query).length === 0;
+        if(isEmpty) 
+           response=await Customer.find();
+        else
+           response=await Customer.find(query);
+          
+        res.json(response);
+
     }catch(err){
-        res.json({message : errs});
+        res.json({message : err});
     }
 });
 
@@ -52,7 +68,7 @@ customerRouter.get('/:custId', async (req, res)=>{
     }catch(err){
         res.json({message : err});
     }
-})
+});
 
 // Edit Customer by id
 
