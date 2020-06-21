@@ -54,7 +54,7 @@ Request body - ex
 	"AnnualTurnOver":"234,888",
 	"EstimateTurnOver":"898,765"
 }
-**custId should be auto generated in future
+**GN-Update custId is now auto-generated
 
 2. To get all customers
 
@@ -89,3 +89,38 @@ Response Structure
         "__v": 0
     }
  ]
+
+3. To edit customer
+
+URI - http://localhost:3000/customers/edit/:custId
+Method - put
+
+Request body - ex
+-------------
+{}
+	"custName":"dummy - 2",
+	"businessType":"Logistics",
+	"Status":"In Progress",
+	"Purpose":"Trade",
+	"RMTeam":"Trade Segment",
+	"PEP":"No",
+	"AnnualTurnOver":"234,888",
+	"EstimateTurnOver":"898,765"
+}
+
+Resonse
+-------
+{
+    "success": "true" or "false"
+}
+
+4. To delete customer
+
+URI - http://localhost:3000/customers/delete/:custId
+Method - delete
+
+Resonse
+-------
+{
+    "success": "true" or "false"
+}
