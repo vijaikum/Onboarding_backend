@@ -18,6 +18,7 @@ spec:
       containers: 
       - name: node-deployment
         image: vijkum/onboarding:node
+        imagePullPolicy: Always
         env:
         - name: DB_CONNECTION
           value: "mongodb+srv://mdbadmin:Incorrect@cluster0-el86i.azure.mongodb.net/Onboarding?retryWrites=true&w=majority"
