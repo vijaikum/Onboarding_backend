@@ -11,4 +11,4 @@ RUN npm install --silent
 COPY . ./
 
 # start app
-CMD ["node", "app.js"]
+CMD ["nodemon", "src/app.js"]
