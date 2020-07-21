@@ -25,11 +25,12 @@ app.get('/', (req, res) => {
     res.send("Please provide correcct resource url to access the onboarding service e.g /customers");
 });
 
-mongoose.connect(process.env.DB_MB_CONN || process.env.DB_CONNECTION,
+mongoose.connect("mongodb+srv://mdbadmin:Incorrect@cluster0-el86i.azure.mongodb.net/Onboarding?retryWrites=true&w=majority",
     { useNewUrlParser: true ,useUnifiedTopology: true  },() =>{
     console.log("DB Connected - Local")    
 })
 
-const port=process.env.PORT || 3000
-
-app.listen(port);
+app.listen(3001, () => {
+    logger.info("xpress Application Server");
+    console.log("Express Application Server Is Running At Port 3001");
+});
