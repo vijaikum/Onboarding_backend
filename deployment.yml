@@ -8,15 +8,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: node-pod
+      app: node-deployment
   template:
     metadata:
-      name: node-pod
+      name: node-deployment
       labels:
-        app: node-pod
+        app: node-deployment
     spec:
       containers: 
-      - name: backend
+      - name: node-deployment
         image: vijkum/onboarding:node
         env:
         - name: DB_CONNECTION
