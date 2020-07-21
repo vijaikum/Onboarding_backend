@@ -1,15 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: onboarding
+  name: node-service
   labels:
-    app: onboarding   
+    app: node-service    
 spec:
   type: LoadBalancer
-  selector:
-    app: onboarding
-    tier: backend
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  selector:
+    app: node-pod
