@@ -31,4 +31,7 @@ node {
             sh 'kubectl create -f service.yml'
         }
     }
+    stage('Workspace Cleanup') {
+     cleanWs()
+    }
 }
