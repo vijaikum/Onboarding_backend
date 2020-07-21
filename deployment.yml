@@ -1,23 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: node-deployment
+  name: onboarding
   labels:
-    app: node-deployment
+    app: onboarding
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: node-deployment
+      app: onboarding
   template:
     metadata:
       labels:
-        app: node-deployment
+        app: onboarding
     spec:
       containers:
-        - name: node-deployment
+        - name: onboarding
           image: vijkum/node-deployment:node
-          imagePullPolicy: Always
           ports:
             - name: http
               containerPort: 5000
