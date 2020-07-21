@@ -27,8 +27,8 @@ node {
     
     stage('Test Kubernetes') {
         withKubeConfig(credentialsId: 'kubeconfig', serverUrl: 'https://murugan-cl-murugan-kube-4ebfba-8817583e.hcp.centralus.azmk8s.io:443') {
-            sh 'kubectl create -f deployment.yml'
-            sh 'kubectl create -f service.yml'
+            sh 'kubectl apply -f deployment.yml'
+            sh 'kubectl apply -f service.yml'
         }
     }
     stage('Workspace Cleanup') {
