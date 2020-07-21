@@ -30,6 +30,6 @@ mongoose.connect("mongodb+srv://mdbadmin:Incorrect@cluster0-el86i.azure.mongodb.
     console.log("DB Connected - Local")    
 })
 
-const port= 80
+const port= 3001
 
 app.listen(port);
