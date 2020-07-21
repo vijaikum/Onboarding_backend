@@ -17,6 +17,7 @@ spec:
       containers:
         - name: onboarding
           image: vijkum/node-deployment:node
+          imagePullPolicy: Always
           ports:
             - name: http
               containerPort: 5000
