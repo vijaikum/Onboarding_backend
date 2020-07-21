@@ -30,7 +30,6 @@ mongoose.connect("mongodb+srv://mdbadmin:Incorrect@cluster0-el86i.azure.mongodb.
     console.log("DB Connected - Local")    
 })
 
-app.listen(3001, () => {
-    logger.info("xpress Application Server");
-    console.log("Express Application Server Is Running At Port 3001");
-});
+const port= 80
+
+app.listen(port);
