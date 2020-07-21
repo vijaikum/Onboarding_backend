@@ -1,14 +1,13 @@
-FROM node:13.12.0-alpine
+FROM node:alpine
 
-WORKDIR /app
+WORKDIR /backendapp
 
-ENV PATH /app/node_modules/.bin:$PATH
+COPY package*.json ./
 
-COPY package.json ./
-COPY package-lock.json ./
-RUN npm install --silent
+RUN npm install
 
 COPY . ./
 
-# start app
-CMD ["node", "src/app.js"]
+EXPOSE 5000
+
+CMD [ "npm", "start" ]
