@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: onboarding
+  labels:
+    app: onboarding   
+spec:
+  type: LoadBalancer
+  selector:
+    app: onboarding
+    tier: backend
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
