@@ -18,6 +18,9 @@ spec:
         - name: onboarding
           image: vijkum/onboarding:node
           imagePullPolicy: Always
+          env:
+            - name: DB_MB_CONN
+              value: "mongodb+srv://mdbadmin:Incorrect@cluster0-el86i.azure.mongodb.net/Onboarding?retryWrites=true&w=majority"
           ports:
             - name: http
               containerPort: 5000
