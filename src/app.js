@@ -25,9 +25,9 @@ app.get('/', (req, res) => {
     res.send("Please provide correcct resource url to access the onboarding service e.g /customers");
 });
 
-mongoose.connect("mongodb+srv://mdbadmin:Incorrect@cluster0-el86i.azure.mongodb.net/Onboarding?retryWrites=true&w=majority",
+mongoose.connect(process.env.DB_MB_CONN || process.env.DB_CONNECTION,
     { useNewUrlParser: true ,useUnifiedTopology: true  },() =>{
-    console.log("DB Connected - Local")    
+    console.log("Mongo DB Connected")    
 })
 
 const port=process.env.PORT || 5000
